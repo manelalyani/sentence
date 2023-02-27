@@ -1,0 +1,32 @@
+ALGORITHM read-phrase
+VAR
+    ch:STRING
+    i:INTEGER
+    nb_word:INTEGER
+    c:CHAR
+    nb_vowels:INTEGER
+    ch_counter:INTEGER;
+
+BEGIN
+ch:="";
+nb_word:=1;
+nb_vowels:=0;
+  REPEAT
+ read(c);
+ch:=ch+c;
+  UNTIL (c='.');
+   ch_counter := ch.length;
+   FOR i FROM 0 TO ch.length-1 STEP 1  DO
+   IF (ch[i]=" ") THEN
+   nb_word:=ch_counter+1;
+   END_IF
+   IF ((ch[i]='a')or(ch[i]='e')or(ch[i]='o')or(ch[i]='i')or(ch[i]='u')) THEN
+ nb_vowels:= nb_vowels+1;
+END_IF
+ END_FOR
+ write("nb_word");
+ write("nb_vowels");
+ write("ch_counter");
+ 
+
+END
